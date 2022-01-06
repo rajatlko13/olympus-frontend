@@ -47,15 +47,17 @@ function TopBar({ theme, toggleTheme, handleDrawerToggle }) {
         >
           <SvgIcon component={MenuIcon} />
         </Button>
-
-        <Box display="flex">
-          {/* {!isVerySmallScreen && <OhmMenu />} /}
-          <Wallet />
-          {/ <ConnectMenu /> */}
-          <Wallet />
-          <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
-          <LocaleSwitcher />
-        </Box>
+        <span style={{ display: "flex", flexWrap: "wrap" }}>
+          <span style={{ fontSize: "45px", paddingRight: "670px", fontWeight: "bold" }}>DASHBOARD</span>
+          <Box display="flex">
+            {/* {!isVerySmallScreen && <OhmMenu />} /}
+            <Wallet />
+            {/ <ConnectMenu /> */}
+            <Wallet />
+            <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
+            <LocaleSwitcher />
+          </Box>
+        </span>
       </Toolbar>
     </AppBar>
   );

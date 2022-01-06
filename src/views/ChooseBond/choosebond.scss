@@ -12,6 +12,23 @@
     }
   }
 
+  .bond-metrics {
+    width: 90%;
+    margin-bottom: 23px;
+    text-align: center;
+    .ohm-card {
+      background-color: #074C6C;
+      color: #F9F9EE;
+      max-width: unset !important;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      h5 {
+        font-weight: bold;
+      }
+    }
+  }
+
   .claim-bonds-card {
     .global-claim-buttons {
       width: 100%;
@@ -106,10 +123,22 @@
     }
   }
 
+  @media only screen and (min-width: 1300px) {
+    .MuiTableCell-body {
+      padding-inline: 60px;
+    }
+  }
+
+  @media only screen and (max-width: 1300px) and (min-width: 740px) {
+    .MuiTableCell-body {
+      padding-inline: 40px;
+    }
+  }
+
   .MuiTableBody-root .MuiTableRow-root .MuiTableCell-alignLeft.bond-name-cell {
     justify-content: space-between;
     display: flex;
-    div.bond-name {
+    span.bond-name {
       width: 60%;
       margin-left: 5px !important;
       display: flex;

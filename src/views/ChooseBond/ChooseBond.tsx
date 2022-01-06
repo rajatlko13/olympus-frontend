@@ -77,7 +77,45 @@ function ChooseBond() {
     <div id="choose-bond-view">
       {!isAccountLoading && !isEmpty(accountBonds) && <ClaimBonds activeBonds={accountBonds} />}
 
-      <Zoom in={true}>
+      <Typography variant="h3" data-testid="t" style={{ fontWeight: "bold", padding: "30px" }}>
+        <Trans>BOND</Trans> (1,1)
+      </Typography>
+
+      <Box className="bond-metrics">
+        <Paper className="ohm-card">
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly", alignItems: "center" }}>
+            <span style={isVerySmallScreen ? { marginBottom: "10px" } : {}}>
+              <Metric
+                label={t`TREASURY BALANCE`}
+                metric={formattedTreasuryBalance}
+                isLoading={!!treasuryBalance ? false : true}
+              />
+            </span>
+            {!isSmallScreen && <span style={{ borderLeft: "2px solid white", height: "120px" }}></span>}
+            <span>
+              <Metric
+                label={t`OHM PRICE`}
+                metric={formatCurrency(Number(marketPrice), 2)}
+                isLoading={marketPrice ? false : true}
+              />
+            </span>
+          </div>
+        </Paper>
+      </Box>
+
+      {!isSmallScreen && (
+        <TableBody style={{ overflow: "scroll" }}>
+          {bonds.map(bond => {
+            // NOTE (appleseed): temporary for ONHOLD MIGRATION
+            // if (bond.getBondability(networkId)) {
+            if (bond.getBondability(networkId) || bond.getLOLability(networkId)) {
+              return <BondTableData key={bond.name} bond={bond} />;
+            }
+          })}
+        </TableBody>
+      )}
+
+      {/* <Zoom in={true}>
         <Paper className="ohm-card">
           <Box className="card-header">
             <Typography variant="h5" data-testid="t">
@@ -133,7 +171,7 @@ function ChooseBond() {
             </Grid>
           )}
         </Paper>
-      </Zoom>
+      </Zoom> */}
 
       {isSmallScreen && (
         <Box className="ohm-card-container">

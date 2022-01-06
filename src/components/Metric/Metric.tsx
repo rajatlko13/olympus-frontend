@@ -27,12 +27,12 @@ const Metric = ({
 }: MetricProps) => {
   return (
     <div className={`metric ${className}`}>
-      <Box textAlign={{ xs: "left", sm: "center" }}>
-        <Typography variant={labelVariant} color="textSecondary">
+      <Box style={{ textAlign: "center" }}>
+        <Typography variant={labelVariant} style={{ paddingBottom: "5px" }}>
           {props.label}
           {props.tooltip && <InfoTooltip message={props.tooltip} children={undefined} />}
         </Typography>
-        <Typography variant={metricVariant} style={{ width: "100%" }}>
+        <Typography variant={metricVariant} style={{ width: "100%", fontWeight: "lighter" }}>
           {props.isLoading ? <Skeleton width={loadingWidth} /> : <span>{props.metric}</span>}
         </Typography>
       </Box>

@@ -13,6 +13,7 @@ import { useWeb3Context } from "src/hooks/web3Context";
 import { Skeleton } from "@material-ui/lab";
 import { useAppSelector } from "src/hooks";
 import { IAllBondData } from "src/hooks/Bonds";
+import red from "@material-ui/core/colors/red";
 
 type InputEvent = ChangeEvent<HTMLInputElement>;
 
@@ -75,31 +76,31 @@ const Bond = ({ bond }: { bond: IAllBondData }) => {
 
               <Box display="flex" flexDirection="row" className="bond-price-data-row">
                 <div className="bond-price-data">
-                  <Typography variant="h5" color="textSecondary">
-                    <Trans>Bond Price</Trans>
+                  <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold" }}>
+                    <Trans>BOND PRICE</Trans>
                   </Typography>
-                  <Typography variant="h3" className="price" color="primary">
+                  <Typography
+                    className="price"
+                    style={{ color: "#F9F9EE", fontSize: "25px", fontWeight: "lighter", paddingTop: "5px" }}
+                  >
                     <>{isBondLoading ? <Skeleton width="50px" /> : <DisplayBondPrice key={bond.name} bond={bond} />}</>
                   </Typography>
                 </div>
+                <span style={{ borderLeft: "2px solid white", height: "50px" }}></span>
                 <div className="bond-price-data">
-                  <Typography variant="h5" color="textSecondary">
-                    <Trans>Market Price</Trans>
+                  <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold" }}>
+                    <Trans>MARKET PRICE</Trans>
                   </Typography>
-                  <Typography variant="h3" color="primary" className="price">
+                  <Typography
+                    style={{ color: "#F9F9EE", fontSize: "25px", fontWeight: "lighter", paddingTop: "5px" }}
+                    className="price"
+                  >
                     {isBondLoading ? <Skeleton /> : formatCurrency(bond.marketPrice, 2)}
                   </Typography>
                 </div>
               </Box>
 
-              <Tabs
-                centered
-                value={view}
-                textColor="primary"
-                indicatorColor="primary"
-                onChange={changeView}
-                aria-label="bond tabs"
-              >
+              <Tabs centered value={view} onChange={changeView} aria-label="bond tabs" style={{ color: "white" }}>
                 <Tab
                   aria-label="bond-tab-button"
                   label={t({

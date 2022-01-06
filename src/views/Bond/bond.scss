@@ -37,6 +37,9 @@
 
   .ohm-card {
     max-width: 803px;
+    [class*="PrivateTabIndicator-colorSecondary-"] {
+      background-color: #648FA3;
+    }
   }
 
   .bond-header {

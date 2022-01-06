@@ -28,14 +28,26 @@ const TreasuryDashboard = memo(() => {
       >
         <Box className="hero-metrics">
           <Paper className="ohm-card">
-            <MetricCollection>
-              <MarketCap />
-              <OHMPrice />
-              <GOHMPrice />
-              <CircSupply />
-              <BackingPerOHM />
-              <CurrentIndex />
-            </MetricCollection>
+            {/* <MetricCollection> */}
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly", alignItems: "center" }}>
+              <span style={{ display: "flex", flexDirection: "column" }}>
+                <MarketCap />
+                <div style={{ padding: "10px" }}></div>
+                <CircSupply />
+              </span>
+              {!isSmallScreen && <span style={{ borderLeft: "2px solid white", height: "150px" }}></span>}
+              <span style={{ display: "flex", flexDirection: "column" }}>
+                <OHMPrice />
+                <div style={{ padding: "10px" }}></div>
+                <BackingPerOHM />
+              </span>
+              {!isSmallScreen && <span style={{ borderLeft: "2px solid white", height: "150px" }}></span>}
+              <span style={{ display: "flex", flexDirection: "column" }}>
+                <CurrentIndex />
+                {/* <GOHMPrice /> */}
+              </span>
+            </div>
+            {/* </MetricCollection> */}
           </Paper>
         </Box>
         <Box className="hero-metrics" style={{ marginTop: "20px" }}>

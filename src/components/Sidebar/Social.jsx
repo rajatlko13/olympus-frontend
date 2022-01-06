@@ -8,19 +8,19 @@ export default function Social() {
   return (
     <div className="social-row">
       <Link href="https://github.com/OlympusDAO" target="_blank">
-        <SvgIcon color="primary" component={GitHub} />
+        <SvgIcon component={GitHub} />
       </Link>
 
       <Link href="https://olympusdao.medium.com/" target="_blank">
-        <SvgIcon color="primary" component={Medium} />
+        <SvgIcon component={Medium} />
       </Link>
 
       <Link href="https://twitter.com/OlympusDAO" target="_blank">
-        <SvgIcon color="primary" component={Twitter} />
+        <SvgIcon component={Twitter} />
       </Link>
 
       <Link href="https://discord.gg/6QjjtUcfM4" target="_blank">
-        <SvgIcon color="primary" component={Discord} />
+        <SvgIcon component={Discord} />
       </Link>
     </div>
   );

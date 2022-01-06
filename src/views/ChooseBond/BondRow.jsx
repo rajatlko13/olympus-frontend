@@ -90,9 +90,9 @@ export function BondTableData({ bond }) {
 
   return (
     <TableRow id={`${bond.name}--bond`}>
-      <TableCell align="left" className="bond-name-cell">
+      <TableCell className="bond-name-cell">
         <BondLogo bond={bond} />
-        <div className="bond-name">
+        {/* <span className="bond-name">
           <Typography variant="body1">{bond.displayName}</Typography>
           {bond.isLP && (
             <Link color="primary" href={bond.lpUrl} target="_blank">
@@ -102,18 +102,29 @@ export function BondTableData({ bond }) {
               </Typography>
             </Link>
           )}
-        </div>
+        </span> */}
       </TableCell>
-      <TableCell align="left">
+      <TableCell>
+        <Typography variant="body1">{bond.displayName}</Typography>
+        {bond.isLP && (
+          <Link color="primary" href={bond.lpUrl} target="_blank">
+            <Typography variant="body1">
+              <Trans>Deposit LP</Trans>
+              <SvgIcon component={ArrowUp} htmlColor="#A3A3A3" />
+            </Typography>
+          </Link>
+        )}
+      </TableCell>
+      <TableCell>
         <Typography>
           <>{isBondLoading ? <Skeleton width="50px" /> : <DisplayBondPrice key={bond.name} bond={bond} />}</>
         </Typography>
       </TableCell>
-      <TableCell align="left">
+      <TableCell>
         {" "}
         {isBondLoading ? <Skeleton width="50px" /> : <DisplayBondDiscount key={bond.name} bond={bond} />}
       </TableCell>
-      <TableCell align="right">
+      <TableCell>
         {isBondLoading ? (
           <Skeleton />
         ) : (
@@ -127,7 +138,7 @@ export function BondTableData({ bond }) {
       </TableCell>
       <TableCell>
         <Link component={NavLink} to={`/bonds/${bond.name}`}>
-          <Button variant="outlined" color="primary" disabled={!bond.isBondable[networkId]} style={{ width: "100%" }}>
+          <Button disabled={!bond.isBondable[networkId]} style={{ width: "100%", backgroundColor: "#EEC378" }}>
             {/* NOTE (appleseed): temporary for ONHOLD MIGRATION */}
             {/* <Typography variant="h6">{!bond.isBondable[networkId] ? t`Sold Out` : t`do_bond`}</Typography> */}
             <Typography variant="h6">{bond.isLOLable[networkId] ? bond.LOLmessage : t`do_bond`}</Typography>
@@ -135,5 +146,51 @@ export function BondTableData({ bond }) {
         </Link>
       </TableCell>
     </TableRow>
+    // <TableRow id={`${bond.name}--bond`}>
+    //   <TableCell align="left" className="bond-name-cell">
+    //     <BondLogo bond={bond} />
+    //     <div className="bond-name">
+    //       <Typography variant="body1">{bond.displayName}</Typography>
+    //       {bond.isLP && (
+    //         <Link color="primary" href={bond.lpUrl} target="_blank">
+    //           <Typography variant="body1">
+    //             <Trans>Deposit LP</Trans>
+    //             <SvgIcon component={ArrowUp} htmlColor="#A3A3A3" />
+    //           </Typography>
+    //         </Link>
+    //       )}
+    //     </div>
+    //   </TableCell>
+    //   <TableCell align="left">
+    //     <Typography>
+    //       <>{isBondLoading ? <Skeleton width="50px" /> : <DisplayBondPrice key={bond.name} bond={bond} />}</>
+    //     </Typography>
+    //   </TableCell>
+    //   <TableCell align="left">
+    //     {" "}
+    //     {isBondLoading ? <Skeleton width="50px" /> : <DisplayBondDiscount key={bond.name} bond={bond} />}
+    //   </TableCell>
+    //   <TableCell align="right">
+    //     {isBondLoading ? (
+    //       <Skeleton />
+    //     ) : (
+    //       new Intl.NumberFormat("en-US", {
+    //         style: "currency",
+    //         currency: "USD",
+    //         maximumFractionDigits: 0,
+    //         minimumFractionDigits: 0,
+    //       }).format(bond.purchased)
+    //     )}
+    //   </TableCell>
+    //   <TableCell>
+    //     <Link component={NavLink} to={`/bonds/${bond.name}`}>
+    //       <Button variant="outlined" color="primary" disabled={!bond.isBondable[networkId]} style={{ width: "100%" }}>
+    //         {/* NOTE (appleseed): temporary for ONHOLD MIGRATION */}
+    //         {/* <Typography variant="h6">{!bond.isBondable[networkId] ? t`Sold Out` : t`do_bond`}</Typography> */}
+    //         <Typography variant="h6">{bond.isLOLable[networkId] ? bond.LOLmessage : t`do_bond`}</Typography>
+    //       </Button>
+    //     </Link>
+    //   </TableCell>
+    // </TableRow>
   );
 }

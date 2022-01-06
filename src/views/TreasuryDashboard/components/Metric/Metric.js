@@ -12,7 +12,7 @@ export const MarketCap = () => {
   const marketCap = useSelector(state => state.app.marketCap || 0);
   return (
     <Metric
-      label={t`Market Cap`}
+      label={t`MARKET CAP`}
       metric={formatCurrency(marketCap, 0)}
       isLoading={marketCap ? false : true}
       {...sharedProps}
@@ -24,7 +24,7 @@ export const OHMPrice = () => {
   const marketPrice = useSelector(state => state.app.marketPrice);
   return (
     <Metric
-      label={t`OHM Price`}
+      label={t`OHM PRICE`}
       metric={marketPrice && formatCurrency(marketPrice, 2)}
       isLoading={marketPrice ? false : true}
       {...sharedProps}
@@ -38,7 +38,7 @@ export const CircSupply = () => {
   const isDataLoaded = circSupply && totalSupply;
   return (
     <Metric
-      label={t`Circulating Supply (total)`}
+      label={t`CIRCLATING SUPPLY (TOTAL)`}
       metric={isDataLoaded && parseInt(circSupply) + " / " + parseInt(totalSupply)}
       isLoading={isDataLoaded ? false : true}
       {...sharedProps}
@@ -50,7 +50,7 @@ export const BackingPerOHM = () => {
   const backingPerOhm = useSelector(state => state.app.treasuryMarketValue / state.app.circSupply);
   return (
     <Metric
-      label={t`Backing per OHM`}
+      label={t`BACKING PER OHM`}
       metric={!isNaN(backingPerOhm) && formatCurrency(backingPerOhm, 2)}
       isLoading={backingPerOhm ? false : true}
       {...sharedProps}
@@ -62,7 +62,7 @@ export const CurrentIndex = () => {
   const currentIndex = useSelector(state => state.app.currentIndex);
   return (
     <Metric
-      label={t`Current Index`}
+      label={t`CURRENT INDEX`}
       metric={currentIndex && trim(currentIndex, 2) + " sOHM"}
       isLoading={currentIndex ? false : true}
       {...sharedProps}

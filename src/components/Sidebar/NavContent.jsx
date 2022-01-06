@@ -85,7 +85,6 @@ function NavContent({ handleDrawerToggle }) {
           <Box className="branding-header">
             <Link href="https://olympusdao.finance" target="_blank">
               <SvgIcon
-                color="primary"
                 component={OlympusIcon}
                 viewBox="0 0 151 100"
                 style={{ minWdth: "151px", minHeight: "98px", width: "151px" }}
@@ -110,7 +109,7 @@ function NavContent({ handleDrawerToggle }) {
                     onClick={handleDrawerToggle}
                   >
                     <Typography variant="h6">
-                      <SvgIcon color="primary" component={DashboardIcon} />
+                      <SvgIcon component={DashboardIcon} />
                       <Trans>Dashboard</Trans>
                     </Typography>
                   </Link>
@@ -126,7 +125,7 @@ function NavContent({ handleDrawerToggle }) {
                     onClick={handleDrawerToggle}
                   >
                     <Typography variant="h6">
-                      <SvgIcon color="primary" component={BondIcon} />
+                      <SvgIcon component={BondIcon} />
                       <Trans>Bond</Trans>
                     </Typography>
                   </Link>
@@ -198,7 +197,7 @@ function NavContent({ handleDrawerToggle }) {
                     onClick={handleDrawerToggle}
                   >
                     <Typography variant="h6">
-                      <SvgIcon color="primary" component={StakeIcon} />
+                      <SvgIcon component={StakeIcon} />
                       <Trans>Stake</Trans>
                     </Typography>
                   </Link>
@@ -214,7 +213,7 @@ function NavContent({ handleDrawerToggle }) {
                     onClick={handleDrawerToggle}
                   >
                     <Box display="flex" alignItems="center">
-                      <SvgIcon component={ZapIcon} color="primary" />
+                      <SvgIcon component={ZapIcon} />
                       <Typography variant="h6">OlyZaps</Typography>
                       {/* <SvgIcon component={NewIcon} viewBox="21 -2 20 20" style={{ width: "80px" }} /> */}
                     </Box>
@@ -233,7 +232,7 @@ function NavContent({ handleDrawerToggle }) {
                         onClick={handleDrawerToggle}
                       >
                         <Typography variant="h6">
-                          <SvgIcon color="primary" component={GiveIcon} />
+                          <SvgIcon component={GiveIcon} />
                           <Trans>Give</Trans>
                           <SvgIcon component={NewIcon} viewBox="21 -2 20 20" style={{ width: "80px" }} />
                         </Typography>
@@ -254,7 +253,7 @@ function NavContent({ handleDrawerToggle }) {
                     onClick={handleDrawerToggle}
                   >
                     <Box display="flex" alignItems="center">
-                      <SvgIcon component={WrapIcon} color="primary" viewBox="1 0 20 22" />
+                      <SvgIcon component={WrapIcon} viewBox="1 0 20 22" />
                       {/* <WrapIcon /> */}
                       <Typography variant="h6">Wrap</Typography>
                       {/* <SvgIcon component={WrapIcon} viewBox="21 -2 20 20" style={{ width: "80px" }} /> */}
@@ -289,7 +288,7 @@ function NavContent({ handleDrawerToggle }) {
                     onClick={handleDrawerToggle}
                   >
                     <Box display="flex" alignItems="center">
-                      <SvgIcon component={ProIcon} color="primary" color="primary" viewBox="0 0 50 50" />
+                      <SvgIcon component={ProIcon} viewBox="0 0 50 50" />
                       <Typography variant="h6">Olympus Pro</Typography>
                       <SvgIcon component={ArrowUpIcon} className="external-site-link-icon" />
                     </Box>
@@ -326,7 +325,7 @@ function NavContent({ handleDrawerToggle }) {
                     onClick={handleDrawerToggle}
                   >
                     <Box display="flex" alignItems="center">
-                      <SvgIcon component={WrapIcon} color="primary" viewBox="1 0 20 22" />
+                      <SvgIcon component={WrapIcon} viewBox="1 0 20 22" />
                       {/* <WrapIcon /> */}
                       <Typography variant="h6">Wrap</Typography>
                       {/* <SvgIcon component={WrapIcon} viewBox="21 -2 20 20" style={{ width: "80px" }} /> */}

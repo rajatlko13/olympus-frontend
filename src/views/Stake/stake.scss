@@ -1,3 +1,19 @@
+#stake-view {
+  .stake-metrics {
+    width: 90%;
+    // margin-bottom: 23px;
+    text-align: center;
+    .ohm-card {
+      background-color: #074C6C;
+      color: #F9F9EE;
+      max-width: unset !important;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+}
+
 #stake-view,
 #v1-stake-view {
   display: flex;
@@ -192,6 +208,7 @@
   align-items: center;
   height: auto;
   padding-bottom: 1rem;
+  padding-top: 20px;
 }
 
 .mobile .stake-action-row {
@@ -268,7 +285,7 @@
 }
 
 .staking-area {
-  margin: 13px 10px 13px 10px;
+  margin: 0px 10px 13px 10px;
 }
 
 .stake-lp-button {

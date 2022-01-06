@@ -152,17 +152,22 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
                     </em>
                   </div>
                 ) : (
-                  <FormControl className="ohm-input" variant="outlined" color="primary" fullWidth>
-                    <InputLabel htmlFor="outlined-adornment-amount">
+                  <FormControl
+                    className="ohm-input"
+                    variant="outlined"
+                    color="primary"
+                    fullWidth
+                    style={{ backgroundColor: "white", borderRadius: "5%" }}
+                  >
+                    {/* <InputLabel htmlFor="outlined-adornment-amount">
                       <Trans>Amount</Trans>
-                    </InputLabel>
+                    </InputLabel> */}
                     <OutlinedInput
-                      id="outlined-adornment-amount"
                       type="number"
                       value={quantity}
                       onChange={e => setQuantity(e.target.value)}
+                      placeholder="Amount"
                       // startAdornment={<InputAdornment position="start">$</InputAdornment>}
-                      labelWidth={55}
                       endAdornment={
                         <InputAdornment position="end">
                           <Button variant="text" onClick={setMax}>
@@ -193,6 +198,7 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
                     className="transaction-button"
                     disabled={isPendingTxn(pendingTransactions, "bond_" + bond.name)}
                     onClick={onBond}
+                    style={{ backgroundColor: "#EEC378" }}
                   >
                     {txnButtonText(pendingTransactions, "bond_" + bond.name, "Bond")}
                   </Button>
@@ -217,10 +223,10 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
       <Slide direction="left" in={true} mountOnEnter unmountOnExit {...{ timeout: 533 }}>
         <Box className="bond-data">
           <div className="data-row">
-            <Typography>
-              <Trans>Your Balance</Trans>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
+              <Trans>YOUR BALANCE</Trans>
             </Typography>{" "}
-            <Typography id="bond-balance">
+            <Typography id="bond-balance" style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}>
               {isBondLoading ? (
                 <Skeleton width="100px" />
               ) : (
@@ -232,10 +238,14 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
           </div>
 
           <div className={`data-row`}>
-            <Typography>
-              <Trans>You Will Get</Trans>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
+              <Trans>YOU WILL GET</Trans>
             </Typography>
-            <Typography id="bond-value-id" className="price-data">
+            <Typography
+              id="bond-value-id"
+              className="price-data"
+              style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}
+            >
               {isBondLoading ? (
                 <Skeleton width="100px" />
               ) : (
@@ -245,10 +255,14 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
           </div>
 
           <div className={`data-row`}>
-            <Typography>
-              <Trans>Max You Can Buy</Trans>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
+              <Trans>MAX YOU CAN BUY</Trans>
             </Typography>
-            <Typography id="bond-value-id" className="price-data">
+            <Typography
+              id="bond-value-id"
+              className="price-data"
+              style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}
+            >
               {isBondLoading ? (
                 <Skeleton width="100px" />
               ) : (
@@ -258,36 +272,40 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
           </div>
 
           <div className="data-row">
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
               <Trans>ROI</Trans>
             </Typography>
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}>
               {isBondLoading ? <Skeleton width="100px" /> : <DisplayBondDiscount key={bond.name} bond={bond} />}
             </Typography>
           </div>
 
           <div className="data-row">
-            <Typography>
-              <Trans>Debt Ratio</Trans>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
+              <Trans>DEBT RATIO</Trans>
             </Typography>
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}>
               {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.debtRatio / 10000000, 2)}%`}
             </Typography>
           </div>
 
           <div className="data-row">
-            <Typography>
-              <Trans>Vesting Term</Trans>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
+              <Trans>VESTING TERM</Trans>
             </Typography>
-            <Typography>{isBondLoading ? <Skeleton width="100px" /> : vestingPeriod()}</Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}>
+              {isBondLoading ? <Skeleton width="100px" /> : vestingPeriod()}
+            </Typography>
           </div>
 
           {recipientAddress !== address && (
             <div className="data-row">
-              <Typography>
-                <Trans>Recipient</Trans>{" "}
+              <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
+                <Trans>RECIPIENT</Trans>{" "}
               </Typography>
-              <Typography>{isBondLoading ? <Skeleton width="100px" /> : shorten(recipientAddress)}</Typography>
+              <Typography style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}>
+                {isBondLoading ? <Skeleton width="100px" /> : shorten(recipientAddress)}
+              </Typography>
             </div>
           )}
         </Box>
