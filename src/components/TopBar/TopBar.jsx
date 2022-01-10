@@ -48,7 +48,7 @@ function TopBar({ theme, toggleTheme, handleDrawerToggle }) {
           <SvgIcon component={MenuIcon} />
         </Button>
         <span style={{ display: "flex", flexWrap: "wrap" }}>
-          <span style={{ fontSize: "45px", paddingRight: "670px", fontWeight: "bold" }}>DASHBOARD</span>
+          {/* <span style={{ fontSize: "45px", paddingRight: "670px", fontWeight: "bold" }}>DASHBOARD</span> */}
           <Box display="flex">
             {/* {!isVerySmallScreen && <OhmMenu />} /}
             <Wallet />

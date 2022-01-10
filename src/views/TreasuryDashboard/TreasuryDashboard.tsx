@@ -20,6 +20,7 @@ const TreasuryDashboard = memo(() => {
 
   return (
     <div id="treasury-dashboard-view" className={`${isSmallScreen && "smaller"} ${isVerySmallScreen && "very-small"}`}>
+      <span className="dashboard-header-text">DASHBOARD</span>
       <Container
         style={{
           paddingLeft: isSmallScreen || isVerySmallScreen ? "0" : "3.3rem",

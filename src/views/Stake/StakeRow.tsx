@@ -10,15 +10,37 @@ interface StakeRowProps {
 }
 
 const StakeRow = (props: StakeRowProps) => {
+  // var sty = {
+  //   display: "flex",
+  //   justifyContent: "end",
+  //   paddingLeft: ""
+  // };
+  // if(props.indented)
+  //   sty["paddingLeft"] = "10px";
   return (
-    <div className="data-row" style={props.indented ? { paddingLeft: "10px" } : {}}>
-      <Typography variant={props.indented ? `body2` : `body1`} color={props.indented ? "textSecondary" : "primary"}>
+    // <div className="data-row" style={{ display: "flex", justifyContent: "end" }}>
+    //   <span>
+
+    //   </span>
+    // </div>
+    <div
+      className="data-row"
+      style={
+        props.indented
+          ? { paddingLeft: "25px", display: "flex", justifyContent: "space-between", paddingBottom: "15px" }
+          : { display: "flex", justifyContent: "space-between", paddingBottom: "15px" }
+      }
+    >
+      <Typography
+        color={props.indented ? "textSecondary" : "primary"}
+        style={{ fontSize: props.indented ? "13px" : "16px", fontWeight: "bold" }}
+      >
         {props.title}
       </Typography>
       <Typography
-        variant={props.indented ? `body2` : `body1`}
         id={props.id}
         color={props.indented ? "textSecondary" : "primary"}
+        style={{ fontSize: props.indented ? "15px" : "18px" }}
       >
         {props.isAppLoading ? <Skeleton width="80px" /> : <>{props.balance}</>}
       </Typography>

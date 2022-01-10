@@ -76,7 +76,7 @@ function ChooseBond() {
   return (
     <div id="choose-bond-view">
       {!isAccountLoading && !isEmpty(accountBonds) && <ClaimBonds activeBonds={accountBonds} />}
-
+      <span className="header-text">BOND</span>
       <Typography variant="h3" data-testid="t" style={{ fontWeight: "bold", padding: "30px" }}>
         <Trans>BOND</Trans> (1,1)
       </Typography>

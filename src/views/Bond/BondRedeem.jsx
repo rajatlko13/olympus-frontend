@@ -59,7 +59,6 @@ function BondRedeem({ bond }) {
           <>
             <Button
               variant="contained"
-              color="primary"
               id="bond-claim-btn"
               className="transaction-button"
               fullWidth
@@ -67,12 +66,12 @@ function BondRedeem({ bond }) {
               onClick={() => {
                 onRedeem({ autostake: false });
               }}
+              style={{ backgroundColor: "#EEC378", color: "black" }}
             >
               {txnButtonText(pendingTransactions, "redeem_bond_" + bond.name, t`Claim`)}
             </Button>
             <Button
               variant="contained"
-              color="primary"
               id="bond-claim-autostake-btn"
               className="transaction-button"
               fullWidth
@@ -83,6 +82,7 @@ function BondRedeem({ bond }) {
               onClick={() => {
                 onRedeem({ autostake: true });
               }}
+              style={{ backgroundColor: "#EEC378", color: "black" }}
             >
               {txnButtonText(pendingTransactions, "redeem_bond_" + bond.name + "_autostake", t`Claim and Autostake`)}
             </Button>
@@ -92,51 +92,59 @@ function BondRedeem({ bond }) {
       <Slide direction="right" in={true} mountOnEnter unmountOnExit {...{ timeout: 533 }}>
         <Box className="bond-data">
           <div className="data-row">
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
               <Trans>Pending Rewards</Trans>
             </Typography>
-            <Typography className="price-data">
+            <Typography className="price-data" style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}>
               {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.interestDue, 4)} OHM`}
             </Typography>
           </div>
           <div className="data-row">
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
               <Trans>Claimable Rewards</Trans>
             </Typography>
-            <Typography id="claimable" className="price-data">
+            <Typography
+              id="claimable"
+              className="price-data"
+              style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}
+            >
               {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.pendingPayout, 4)} OHM`}
             </Typography>
           </div>
           <div className="data-row">
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
               <Trans>Time until fully vested</Trans>
             </Typography>
-            <Typography className="price-data">{isBondLoading ? <Skeleton width="100px" /> : vestingTime()}</Typography>
+            <Typography className="price-data" style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}>
+              {isBondLoading ? <Skeleton width="100px" /> : vestingTime()}
+            </Typography>
           </div>
 
           <div className="data-row">
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
               <Trans>ROI</Trans>
             </Typography>
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}>
               {isBondLoading ? <Skeleton width="100px" /> : <DisplayBondDiscount key={bond.name} bond={bond} />}
             </Typography>
           </div>
 
           <div className="data-row">
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
               <Trans>Debt Ratio</Trans>
             </Typography>
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}>
               {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.debtRatio / 10000000, 2)}%`}
             </Typography>
           </div>
 
           <div className="data-row">
-            <Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "15px", fontWeight: "bold", paddingTop: "4px" }}>
               <Trans>Vesting Term</Trans>
             </Typography>
-            <Typography>{isBondLoading ? <Skeleton width="100px" /> : vestingPeriod()}</Typography>
+            <Typography style={{ color: "#F9F9EE", fontSize: "23px", fontWeight: "lighter" }}>
+              {isBondLoading ? <Skeleton width="100px" /> : vestingPeriod()}
+            </Typography>
           </div>
         </Box>
       </Slide>

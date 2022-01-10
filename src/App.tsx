@@ -312,11 +312,11 @@ function App() {
           </nav>
 
           <div className={`${classes.content} ${isSmallerScreen && classes.contentShift}`}>
-            {oldAssetsDetected &&
+            {/* {oldAssetsDetected &&
               !hasActiveV1Bonds &&
               trimmedPath.indexOf("dashboard") === -1 &&
               oldAssetsEnoughToMigrate && <CallToAction setMigrationModalOpen={setMigrationModalOpen} />}
-            {trimmedPath.indexOf("dashboard") === -1 && <Announcement />}
+            {trimmedPath.indexOf("dashboard") === -1 && <Announcement />} */}
 
             <Switch>
               <Route exact path="/dashboard">

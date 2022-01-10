@@ -73,7 +73,7 @@
   .stake-accordion {
     backdrop-filter: none;
     background-color: inherit;
-    margin: 12px 0;
+    margin: 0;
 
     &:before {
       display: none;
@@ -100,12 +100,12 @@
       padding-top: 0;
       padding-bottom: 0;
       position: absolute;
-      left: 100px;
+      left: 130px;
       top: -3px;
       transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, top 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
         transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
       &.Mui-expanded {
-        left: 104px;
+        left: 130px;
         top: 1px;
       }
     }
@@ -209,6 +209,7 @@
   height: auto;
   padding-bottom: 1rem;
   padding-top: 20px;
+  padding-inline: 10%;
 }
 
 .mobile .stake-action-row {
@@ -286,6 +287,7 @@
 
 .staking-area {
   margin: 0px 10px 13px 10px;
+  min-width: 50%;
 }
 
 .stake-lp-button {
@@ -368,4 +370,34 @@
 
 .mobile .stake-tab-panel.wrap-page {
   align-items: center;
+}
+
+@media screen and (min-width: 980px) {
+  .header-text {
+    position: absolute;
+    font-size: 50px;
+    font-weight: bold;
+    top: 2%;
+    left: 330px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .header-text {
+    position: absolute;
+    font-size: 50px;
+    font-weight: bold;
+    top: 2%;
+    left: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-text {
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    top: 1%;
+    left: 70px;
+  }
 }
